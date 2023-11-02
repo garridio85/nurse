@@ -107,7 +107,7 @@ export const Feedback = (props: any) => {
             </button>
           </div>
         ) : (
-          <div style={{ textAlign: 'left', marginTop: 106, minWidth: 400 }}>
+          <div style={{ textAlign: 'left', marginTop: 106, minWidth: 350 }}>
             <div
               style={{
                 fontSize: 30,
