@@ -65,6 +65,7 @@ function App() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'start',
+            boxShadow: '#777777 0px 18px 22px 4px',
           }}
         >
           <button
