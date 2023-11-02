@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Quiz } from './views/quiz/quiz.view';
+import { Feedback } from './views/feedback/feedback.view';
 
 function App() {
   const [routes, setRoute] = useState('');
+  const [showFlyoutMenu, setShowFlyoutMenu] = useState(false);
 
   return (
     <div className="App">
@@ -19,26 +21,108 @@ function App() {
           background: '#64a7e3',
           borderBottom: 'solid 1px white',
         }}
-      ></div>
+      >
+        <button
+          onClick={() => setShowFlyoutMenu(!showFlyoutMenu)}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            outline: 'none',
+            position: 'absolute',
+            left: '10px',
+            top: '10px',
+            color: 'white',
+            cursor: 'pointer',
+          }}
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="34"
+            height="34"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="21" y1="10" x2="3" y2="10"></line>
+            <line x1="21" y1="6" x2="3" y2="6"></line>
+            <line x1="21" y1="14" x2="3" y2="14"></line>
+            <line x1="21" y1="18" x2="3" y2="18"></line>
+          </svg>
+        </button>
+        <div
+          className={showFlyoutMenu ? 'active' : ''}
+          style={{
+            width: '300px',
+            position: 'fixed',
+            height: '100vh',
+            background: 'white',
+            top: '50px',
+            transform: `translate(${showFlyoutMenu ? '0px' : '-400px'}, 0px)`,
+            transition: '0.3s',
+            padding: 12,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'start',
+          }}
+        >
+          <button
+            className="btn-transparent"
+            onClick={() => {
+              setRoute('home');
+              setShowFlyoutMenu(false);
+            }}
+          >
+            Home
+          </button>
+          <button
+            className="btn-transparent"
+            onClick={() => {
+              setRoute('home');
+              setShowFlyoutMenu(false);
+            }}
+          >
+            How to video
+          </button>
+          <button
+            className="btn-transparent"
+            onClick={() => {
+              setRoute('home');
+              setShowFlyoutMenu(false);
+            }}
+          >
+            FAQ
+          </button>
+          <button
+            className="btn-transparent"
+            onClick={() => {
+              setRoute('quiz');
+              setShowFlyoutMenu(false);
+            }}
+          >
+            Take Quiz
+          </button>
+          <button
+            className="btn-transparent"
+            onClick={() => {
+              setRoute('feedback');
+              setShowFlyoutMenu(false);
+            }}
+          >
+            Feedback Survey
+          </button>
+        </div>
+      </div>
       <div>
         {routes === 'quiz' ? (
           <Quiz />
+        ) : routes === 'feedback' ? (
+          <Feedback goBack={() => setRoute('home')} />
         ) : (
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.tsx</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-            <button onClick={() => setRoute('quiz')}>Start Quiz</button>
-          </header>
+          <div style={{ background: 'blue', minHeight: '100vh' }}>
+            <div style={{ paddingTop: 50 }}></div>
+          </div>
         )}
       </div>
     </div>

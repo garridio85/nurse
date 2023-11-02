@@ -154,7 +154,14 @@ export const Quiz = () => {
           />
         ) : (
           <div style={{ textAlign: 'left', marginTop: 106, minWidth: 400 }}>
-            <div style={{ fontSize: 30, color: 'white', marginBottom: 70 }}>
+            <div
+              style={{
+                fontSize: 30,
+                color: 'white',
+                marginBottom: 70,
+                textAlign: 'center',
+              }}
+            >
               {quizData[activeQuestion].Question}
             </div>
             {['A', 'B', 'C', 'D'].map((questionOption) => (
