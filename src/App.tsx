@@ -8,7 +8,18 @@ function App() {
 
   return (
     <div className="App">
-      <div></div>
+      <div
+        style={{
+          height: '50px',
+          width: '100%',
+          position: 'fixed',
+          top: '0',
+          left: '0',
+          right: '0',
+          background: '#64a7e3',
+          borderBottom: 'solid 1px white',
+        }}
+      ></div>
       <div>
         {routes === 'quiz' ? (
           <Quiz />

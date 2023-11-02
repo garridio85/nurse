@@ -140,7 +140,6 @@ export const Quiz = () => {
           alignItems: 'center',
           flexDirection: 'column',
           width: '70vw',
-          borderTop: 'solid 3px white',
           borderBottom: 'solid 3px white',
         }}
       >
@@ -225,8 +224,7 @@ const UserResults = (props: any) => {
 
   console.log('quizData', quizData);
 
-  const correctAnswerCount = results.map((result: any) => result.isCorrect);
-  console.log(results);
+  const correctAnswerCount = results.filter((result: any) => result.isCorrect);
 
   const getLabel = (questionNo: string, questionKey: string) => {
     const isCorrect = results.find(
@@ -294,8 +292,8 @@ const UserResults = (props: any) => {
         color: 'white',
       }}
     >
-      <p>Results</p>
-      <p>
+      <p style={{ fontSize: 40, marginBottom: 0 }}>Results</p>
+      <p style={{ fontSize: 40, marginTop: 0 }}>
         {correctAnswerCount?.length}/{quizData?.length}
       </p>
       <div style={{ width: '100%' }}>
@@ -317,7 +315,6 @@ const UserResults = (props: any) => {
             <p style={{ margin: 0, marginBottom: 8 }}>{q.Question}</p>
             {['A', 'B', 'C', 'D'].map((questionOption) => (
               <label>
-                <input type="radio" value={q[questionOption]} />
                 {q[questionOption]}
                 <span
                   style={{
