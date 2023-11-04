@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Quiz } from './views/quiz/quiz.view';
 import { Feedback } from './views/feedback/feedback.view';
