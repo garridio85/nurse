@@ -2,10 +2,25 @@ import React, { useState } from 'react';
 import './App.css';
 import { Quiz } from './views/quiz/quiz.view';
 import { Feedback } from './views/feedback/feedback.view';
+import { FAQ } from './views/faqs/faqs.view';
+import { Home } from './views/home/home.view';
 
 function App() {
   const [routes, setRoute] = useState('');
   const [showFlyoutMenu, setShowFlyoutMenu] = useState(false);
+
+  const router = () => {
+    switch (routes) {
+      case 'quiz':
+        return <Quiz />;
+      case 'feedback':
+        return <Feedback goBack={() => setRoute('home')} />;
+      case 'faq':
+        return <FAQ />;
+      default:
+        return <Home />;
+    }
+  };
 
   return (
     <div className="App">
@@ -88,7 +103,7 @@ function App() {
           <button
             className="btn-transparent"
             onClick={() => {
-              setRoute('home');
+              setRoute('faq');
               setShowFlyoutMenu(false);
             }}
           >
@@ -114,17 +129,7 @@ function App() {
           </button>
         </div>
       </div>
-      <div>
-        {routes === 'quiz' ? (
-          <Quiz />
-        ) : routes === 'feedback' ? (
-          <Feedback goBack={() => setRoute('home')} />
-        ) : (
-          <div style={{ background: 'blue', minHeight: '100vh' }}>
-            <div style={{ paddingTop: 50 }}></div>
-          </div>
-        )}
-      </div>
+      <div style={{ paddingTop: 50 }}>{router()}</div>
     </div>
   );
 }
