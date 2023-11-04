@@ -56,7 +56,11 @@ export const Home = () => {
             )}
 
             {data.image && (
-              <img src={data.image} style={{ maxWidth: '100%' }} />
+              <img
+                src={data.image}
+                style={{ maxWidth: '100%' }}
+                alt="a nurse with a patient"
+              />
             )}
           </div>
         ))}
