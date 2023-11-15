@@ -50,11 +50,13 @@ export const Home = () => {
           <>
             {index === 0 && (
               <div style={{ marginBottom: 40 }} key={data.section}>
-                {data.sectionTitle && <h3>{data.sectionTitle}</h3>}
+                {data.sectionTitle && (
+                  <h3>
+                    <Markdown>{data.sectionTitle}</Markdown>
+                  </h3>
+                )}
                 {data.content && (
-                  <div
-                    style={{ textTransform: 'capitalize', marginBottom: 50 }}
-                  >
+                  <div style={{ marginBottom: 50 }}>
                     <Markdown>{data.content || ''}</Markdown>
                   </div>
                 )}
