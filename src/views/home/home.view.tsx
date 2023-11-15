@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import Markdown from 'markdown-to-jsx';
-import nurseGif from '../../assets/nurse.gif';
 
 export const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
