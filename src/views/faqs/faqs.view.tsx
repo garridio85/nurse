@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Papa from 'papaparse';
+import Markdown from 'markdown-to-jsx';
 
 export const FAQ = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -50,10 +51,11 @@ export const FAQ = () => {
         {faqData.map((faq: any) => (
           <div style={{ marginBottom: 40 }}>
             <h3 style={{ textTransform: 'capitalize', marginBottom: 8 }}>
-              {faq.title}
+              <Markdown>{faq.title}</Markdown>
             </h3>
+
             <div style={{ textTransform: 'capitalize', paddingLeft: 12 }}>
-              {faq.content}
+              <Markdown>{faq.content}</Markdown>
             </div>
           </div>
         ))}
