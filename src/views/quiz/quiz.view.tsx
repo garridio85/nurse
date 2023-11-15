@@ -135,12 +135,11 @@ export const Quiz = () => {
     >
       <div
         style={{
-          height: '80vh',
+          minHeight: '80vh',
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',
           width: '70vw',
-          borderBottom: 'solid 3px white',
         }}
       >
         {isLoading || !quizData ? (

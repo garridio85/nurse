@@ -23,4 +23,33 @@ code {
   cursor: pointer;
   font-size: 20px;
   margin-bottom: 12px;
+  text-decoration: unset;
+  color: black;
+}
+
+.blue-box {
+  background: rgb(101, 167, 227);
+  height: 300px;
+  border-radius: 12px;
+  width: calc(50% - 8px);
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.blue-box-button {
+  background: white;
+  border: none;
+  height: 50px;
+  border-radius: 8px;
+  color: rgb(50, 118, 181);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.blue-box-button a {
+  text-decoration: unset;
+  color: rgb(50, 118, 181) !important;
 }

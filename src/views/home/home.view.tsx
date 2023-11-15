@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import Markdown from 'markdown-to-jsx';
+import nurseGif from '../../assets/nurse.gif';
 
 export const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -46,24 +47,63 @@ export const Home = () => {
   return (
     <div style={{ maxWidth: 1220, margin: 'auto', padding: 8 }}>
       <div>
-        {homeData.map((data: any) => (
-          <div style={{ marginBottom: 40 }} key={data.section}>
-            {data.sectionTitle && <h3>{data.sectionTitle}</h3>}
-            {data.content && (
-              <div style={{ textTransform: 'capitalize', marginBottom: 50 }}>
-                <Markdown>{data.content || ''}</Markdown>
+        {homeData.map((data: any, index: number) => (
+          <>
+            {index === 0 && (
+              <div style={{ marginBottom: 40 }} key={data.section}>
+                {data.sectionTitle && <h3>{data.sectionTitle}</h3>}
+                {data.content && (
+                  <div
+                    style={{ textTransform: 'capitalize', marginBottom: 50 }}
+                  >
+                    <Markdown>{data.content || ''}</Markdown>
+                  </div>
+                )}
               </div>
             )}
-
-            {data.image && (
-              <img
-                src={data.image}
-                style={{ maxWidth: '100%' }}
-                alt="a nurse with a patient"
-              />
-            )}
-          </div>
+          </>
         ))}
+
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+          <div className="blue-box">
+            <h2>Test your Knowledge</h2>
+            <button className="blue-box-button">
+              <a href="/quiz">Click Here To Take Our Quiz</a>
+            </button>
+          </div>
+
+          <div className="blue-box">
+            <h2>But What is Incentive Spirometry?</h2>
+            <button className="blue-box-button">
+              <a href="/general">
+                Click Here To Learn More About Incentive Spirometry
+              </a>
+            </button>
+          </div>
+
+          <div className="blue-box">
+            <h2>How to Use an Incentive Spirometer</h2>
+            <button className="blue-box-button">
+              <a href="/how-to">Click Here For "How To" Video</a>
+            </button>
+          </div>
+
+          <div className="blue-box">
+            <h2>Frequently Asked Questions</h2>
+            <button className="blue-box-button">
+              <a href="/faqs">Click Here For Incentive Spirometry FAQ's</a>
+            </button>
+          </div>
+
+          <div className="blue-box">
+            <h2>How Did you Like this Website?</h2>
+            <button className="blue-box-button">
+              <a href="/feedback">
+                Click Here To Complete Our User Satisfaction Survey
+              </a>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

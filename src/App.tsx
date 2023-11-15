@@ -4,23 +4,12 @@ import { Quiz } from './views/quiz/quiz.view';
 import { Feedback } from './views/feedback/feedback.view';
 import { FAQ } from './views/faqs/faqs.view';
 import { Home } from './views/home/home.view';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { General } from './views/general/general.view';
 
 function App() {
   const [routes, setRoute] = useState('');
   const [showFlyoutMenu, setShowFlyoutMenu] = useState(false);
-
-  const router = () => {
-    switch (routes) {
-      case 'quiz':
-        return <Quiz />;
-      case 'feedback':
-        return <Feedback goBack={() => setRoute('home')} />;
-      case 'faq':
-        return <FAQ />;
-      default:
-        return <Home />;
-    }
-  };
 
   return (
     <div className="App">
@@ -82,7 +71,8 @@ function App() {
             boxShadow: '#777777 0px 18px 22px 4px',
           }}
         >
-          <button
+          <a
+            href="/"
             className="btn-transparent"
             onClick={() => {
               setRoute('home');
@@ -90,8 +80,19 @@ function App() {
             }}
           >
             Home
-          </button>
-          <button
+          </a>
+          <a
+            href="/general"
+            className="btn-transparent"
+            onClick={() => {
+              setRoute('home');
+              setShowFlyoutMenu(false);
+            }}
+          >
+            General information
+          </a>
+          <a
+            href="/how-to"
             className="btn-transparent"
             onClick={() => {
               setRoute('home');
@@ -99,8 +100,9 @@ function App() {
             }}
           >
             How to video
-          </button>
-          <button
+          </a>
+          <a
+            href="/faqs"
             className="btn-transparent"
             onClick={() => {
               setRoute('faq');
@@ -108,8 +110,9 @@ function App() {
             }}
           >
             FAQ
-          </button>
-          <button
+          </a>
+          <a
+            href="/quiz"
             className="btn-transparent"
             onClick={() => {
               setRoute('quiz');
@@ -117,8 +120,9 @@ function App() {
             }}
           >
             Take Quiz
-          </button>
-          <button
+          </a>
+          <a
+            href="/feedback"
             className="btn-transparent"
             onClick={() => {
               setRoute('feedback');
@@ -126,12 +130,29 @@ function App() {
             }}
           >
             Feedback Survey
-          </button>
+          </a>
         </div>
       </div>
-      <div style={{ paddingTop: 50 }}>{router()}</div>
+      <BrowserRouter>
+        <Content />
+      </BrowserRouter>
+      {/* <div style={{ paddingTop: 50 }}>{router()}</div> */}
     </div>
   );
 }
+
+const Content = () => {
+  return (
+    <div style={{ paddingTop: 50 }}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/general" element={<General />} />
+        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/faqs" element={<FAQ />} />
+        <Route path="/feedback" element={<Feedback />} />
+      </Routes>
+    </div>
+  );
+};
 
 export default App;
