@@ -46,19 +46,30 @@ export const FAQ = () => {
   return (
     <div style={{ maxWidth: 1220, margin: 'auto', padding: 8 }}>
       <div>
-        <h1>Frequently Asked Questions</h1>
+        <h1 style={{ textAlign: 'center' }}>Frequently Asked Questions</h1>
 
-        {faqData.map((faq: any) => (
-          <div style={{ marginBottom: 40 }}>
-            <h3 style={{ marginBottom: 8 }}>
-              <Markdown>{faq.title}</Markdown>
-            </h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          {faqData.map((faq: any) => (
+            <div
+              style={{
+                marginBottom: '40px',
+                background: 'rgb(166 197 225)',
+                padding: '12px',
+                paddingTop: '0px',
+                borderRadius: '12px',
+                fontSize: '20px',
+              }}
+            >
+              <h3 style={{ marginBottom: 8 }}>
+                <Markdown>{faq.title}</Markdown>
+              </h3>
 
-            <div style={{ paddingLeft: 12 }}>
-              <Markdown>{faq.content}</Markdown>
+              <div style={{ paddingLeft: 12 }}>
+                <Markdown>{faq.content}</Markdown>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
