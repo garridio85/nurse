@@ -126,7 +126,6 @@ export const Quiz = () => {
   return (
     <div
       style={{
-        background: '#63a7e3',
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
@@ -140,6 +139,9 @@ export const Quiz = () => {
           alignItems: 'center',
           flexDirection: 'column',
           width: '70vw',
+          background: 'rgb(99, 167, 227)',
+          borderRadius: '12px',
+          padding: '8px',
         }}
       >
         {isLoading || !quizData ? (

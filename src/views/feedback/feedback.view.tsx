@@ -58,7 +58,6 @@ export const Feedback = (props: any) => {
   return (
     <div
       style={{
-        background: '#63a7e3',
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
@@ -72,6 +71,9 @@ export const Feedback = (props: any) => {
           alignItems: 'center',
           flexDirection: 'column',
           width: '70vw',
+          background: 'rgb(99, 167, 227)',
+          borderRadius: '12px',
+          padding: '8px',
         }}
       >
         {isLoading ? (
@@ -133,7 +135,7 @@ export const Feedback = (props: any) => {
               </div>
             ) : (
               <>
-                {['A', 'B', 'C', 'D'].map((questionOption) => (
+                {['A', 'B', 'C', 'D', 'E'].map((questionOption) => (
                   <div
                     style={{
                       padding: '12px 4px',
