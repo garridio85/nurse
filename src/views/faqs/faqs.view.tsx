@@ -50,11 +50,11 @@ export const FAQ = () => {
 
         {faqData.map((faq: any) => (
           <div style={{ marginBottom: 40 }}>
-            <h3 style={{ textTransform: 'capitalize', marginBottom: 8 }}>
+            <h3 style={{ marginBottom: 8 }}>
               <Markdown>{faq.title}</Markdown>
             </h3>
 
-            <div style={{ textTransform: 'capitalize', paddingLeft: 12 }}>
+            <div style={{ paddingLeft: 12 }}>
               <Markdown>{faq.content}</Markdown>
             </div>
           </div>

@@ -6,6 +6,7 @@ import { FAQ } from './views/faqs/faqs.view';
 import { Home } from './views/home/home.view';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { General } from './views/general/general.view';
+import { HowTo } from './views/howto/howto.view';
 
 function App() {
   const [showFlyoutMenu, setShowFlyoutMenu] = useState(false);
@@ -143,6 +144,7 @@ const Content = () => {
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/faqs" element={<FAQ />} />
         <Route path="/feedback" element={<Feedback />} />
+        <Route path="/how-to" element={<HowTo />} />
       </Routes>
     </div>
   );

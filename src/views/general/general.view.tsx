@@ -52,9 +52,7 @@ export const General = () => {
               <div style={{ marginBottom: 40 }} key={data.section}>
                 {data.title && <h3>{data.title}</h3>}
                 {data.information && (
-                  <div
-                    style={{ textTransform: 'capitalize', marginBottom: 50 }}
-                  >
+                  <div style={{ marginBottom: 50 }}>
                     <Markdown>{data.information || ''}</Markdown>
                   </div>
                 )}
