@@ -45,18 +45,26 @@ export const Home = () => {
 
   return (
     <div style={{ maxWidth: 1220, margin: 'auto', padding: 8 }}>
-      <div>
+      <div style={{ textAlign: 'center' }}>
         {homeData.map((data: any, index: number) => (
           <>
             {index === 0 && (
               <div style={{ marginBottom: 40 }} key={data.section}>
                 {data.sectionTitle && (
-                  <h3>
+                  <h1>
                     <Markdown>{data.sectionTitle}</Markdown>
-                  </h3>
+                  </h1>
                 )}
                 {data.content && (
-                  <div style={{ marginBottom: 50 }}>
+                  <div
+                    style={{
+                      marginBottom: 50,
+                      width: '80%',
+                      margin: 'auto',
+                      fontSize: '22px',
+                      color: '#1b1b1b',
+                    }}
+                  >
                     <Markdown>{data.content || ''}</Markdown>
                   </div>
                 )}

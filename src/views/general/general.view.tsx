@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import Markdown from 'markdown-to-jsx';
+import iLoader from '../../assets/iloader.gif';
 
 export const General = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -45,6 +46,15 @@ export const General = () => {
 
   return (
     <div style={{ maxWidth: 1220, margin: 'auto', padding: 8 }}>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <img
+          src={iLoader}
+          alt="an animated i"
+          style={{ width: 60, height: 60 }}
+        />
+      </div>
+
+      <h1>But What is Incentive Spirometry?</h1>
       <div>
         {generalData.map((data: any, index: number) => (
           <div style={{ marginBottom: 40 }} key={data.section}>

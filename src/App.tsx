@@ -87,7 +87,7 @@ function App() {
               setShowFlyoutMenu(false);
             }}
           >
-            General information
+            But What is Incentive Spirometry?
           </a>
           <a
             href="/how-to"
@@ -137,7 +137,7 @@ function App() {
 
 const Content = () => {
   return (
-    <div style={{ paddingTop: 50 }}>
+    <div style={{ paddingTop: 80 }}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/general" element={<General />} />

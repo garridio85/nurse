@@ -46,7 +46,7 @@ export const FAQ = () => {
   return (
     <div style={{ maxWidth: 1220, margin: 'auto', padding: 8 }}>
       <div>
-        <h1>FAQs</h1>
+        <h1>Frequently Asked Questions</h1>
 
         {faqData.map((faq: any) => (
           <div style={{ marginBottom: 40 }}>
