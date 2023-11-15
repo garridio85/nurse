@@ -55,3 +55,20 @@ code {
   text-decoration: unset;
   color: rgb(50, 118, 181) !important;
 }
+
+.lg-box {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 70vw;
+  background: rgb(99, 167, 227);
+  border-radius: 12px;
+  padding: 8px;
+}
+
+@media screen and (max-width: 600px) {
+  .lg-box {
+    width: 100vw;
+  }
+}

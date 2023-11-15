@@ -64,18 +64,7 @@ export const Feedback = (props: any) => {
         alignItems: 'center',
       }}
     >
-      <div
-        style={{
-          minHeight: '80vh',
-          display: 'flex',
-          alignItems: 'center',
-          flexDirection: 'column',
-          width: '70vw',
-          background: 'rgb(99, 167, 227)',
-          borderRadius: '12px',
-          padding: '8px',
-        }}
-      >
+      <div className="lg-box">
         {isLoading ? (
           <Loading />
         ) : showFeedbackComplete ? (
