@@ -4,11 +4,10 @@ import { Quiz } from './views/quiz/quiz.view';
 import { Feedback } from './views/feedback/feedback.view';
 import { FAQ } from './views/faqs/faqs.view';
 import { Home } from './views/home/home.view';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { General } from './views/general/general.view';
 
 function App() {
-  const [routes, setRoute] = useState('');
   const [showFlyoutMenu, setShowFlyoutMenu] = useState(false);
 
   return (
@@ -75,7 +74,6 @@ function App() {
             href="/"
             className="btn-transparent"
             onClick={() => {
-              setRoute('home');
               setShowFlyoutMenu(false);
             }}
           >
@@ -85,7 +83,6 @@ function App() {
             href="/general"
             className="btn-transparent"
             onClick={() => {
-              setRoute('home');
               setShowFlyoutMenu(false);
             }}
           >
@@ -95,7 +92,6 @@ function App() {
             href="/how-to"
             className="btn-transparent"
             onClick={() => {
-              setRoute('home');
               setShowFlyoutMenu(false);
             }}
           >
@@ -105,7 +101,6 @@ function App() {
             href="/faqs"
             className="btn-transparent"
             onClick={() => {
-              setRoute('faq');
               setShowFlyoutMenu(false);
             }}
           >
@@ -115,7 +110,6 @@ function App() {
             href="/quiz"
             className="btn-transparent"
             onClick={() => {
-              setRoute('quiz');
               setShowFlyoutMenu(false);
             }}
           >
@@ -125,7 +119,6 @@ function App() {
             href="/feedback"
             className="btn-transparent"
             onClick={() => {
-              setRoute('feedback');
               setShowFlyoutMenu(false);
             }}
           >
