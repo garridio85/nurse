@@ -54,90 +54,90 @@ function App() {
             <line x1="21" y1="18" x2="3" y2="18"></line>
           </svg>
         </button>
-        <div
-          className={showFlyoutMenu ? 'active' : ''}
-          style={{
-            width: '300px',
-            position: 'fixed',
-            height: '100vh',
-            background: 'white',
-            top: '50px',
-            transform: `translate(${showFlyoutMenu ? '0px' : '-400px'}, 0px)`,
-            transition: '0.3s',
-            padding: 12,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'start',
-            boxShadow: '#777777 0px 18px 22px 4px',
+      </div>
+      <div
+        className={showFlyoutMenu ? 'active' : ''}
+        style={{
+          width: '300px',
+          position: 'fixed',
+          height: '100vh',
+          background: 'white',
+          top: '50px',
+          transform: `translate(${showFlyoutMenu ? '0px' : '-400px'}, 0px)`,
+          transition: '0.3s',
+          padding: 12,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'start',
+          boxShadow: '#777777 0px 18px 22px 4px',
+          zIndex: 1,
+        }}
+      >
+        <a
+          href="/"
+          className="btn-transparent"
+          onClick={() => {
+            setShowFlyoutMenu(false);
           }}
         >
-          <a
-            href="/"
-            className="btn-transparent"
-            onClick={() => {
-              setShowFlyoutMenu(false);
-            }}
-          >
-            Home
-          </a>
-          <a
-            href="/general"
-            className="btn-transparent"
-            onClick={() => {
-              setShowFlyoutMenu(false);
-            }}
-          >
-            But What is Incentive Spirometry?
-          </a>
-          <a
-            href="/how-to"
-            className="btn-transparent"
-            onClick={() => {
-              setShowFlyoutMenu(false);
-            }}
-          >
-            How to video
-          </a>
-          <a
-            href="/faqs"
-            className="btn-transparent"
-            onClick={() => {
-              setShowFlyoutMenu(false);
-            }}
-          >
-            FAQ
-          </a>
-          <a
-            href="/quiz"
-            className="btn-transparent"
-            onClick={() => {
-              setShowFlyoutMenu(false);
-            }}
-          >
-            Take Quiz
-          </a>
-          <a
-            href="/feedback"
-            className="btn-transparent"
-            onClick={() => {
-              setShowFlyoutMenu(false);
-            }}
-          >
-            Feedback Survey
-          </a>
-        </div>
+          Home
+        </a>
+        <a
+          href="/general"
+          className="btn-transparent"
+          onClick={() => {
+            setShowFlyoutMenu(false);
+          }}
+        >
+          But What is Incentive Spirometry?
+        </a>
+        <a
+          href="/how-to"
+          className="btn-transparent"
+          onClick={() => {
+            setShowFlyoutMenu(false);
+          }}
+        >
+          How to video
+        </a>
+        <a
+          href="/faqs"
+          className="btn-transparent"
+          onClick={() => {
+            setShowFlyoutMenu(false);
+          }}
+        >
+          FAQ
+        </a>
+        <a
+          href="/quiz"
+          className="btn-transparent"
+          onClick={() => {
+            setShowFlyoutMenu(false);
+          }}
+        >
+          Take Quiz
+        </a>
+        <a
+          href="/feedback"
+          className="btn-transparent"
+          onClick={() => {
+            setShowFlyoutMenu(false);
+          }}
+        >
+          Feedback Survey
+        </a>
       </div>
       <BrowserRouter>
         <Content />
       </BrowserRouter>
-      {/* <div style={{ paddingTop: 50 }}>{router()}</div> */}
     </div>
   );
 }
 
 const Content = () => {
   return (
-    <div style={{ paddingTop: 80 }}>
+    <div className="content-container">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/general" element={<General />} />

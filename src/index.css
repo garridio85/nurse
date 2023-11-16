@@ -67,8 +67,16 @@ code {
   padding: 8px;
 }
 
+.content-container {
+  padding-top: 80px;
+}
+
 @media screen and (max-width: 600px) {
   .lg-box {
     width: 100vw;
+  }
+
+  .how-to-video {
+    width: 100%;
   }
 }
