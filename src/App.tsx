@@ -23,6 +23,7 @@ function App() {
           right: '0',
           background: '#64a7e3',
           borderBottom: 'solid 1px white',
+          zIndex: 10,
         }}
       >
         <button

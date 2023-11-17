@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import Markdown from 'markdown-to-jsx';
+import hands from '../../assets/hands.png';
 
 export const FAQ = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -45,11 +46,13 @@ export const FAQ = () => {
 
   return (
     <div style={{ maxWidth: 1220, margin: 'auto', padding: 8 }}>
-      <div>
-        <h1 style={{ textAlign: 'center' }}>Frequently Asked Questions</h1>
+      <div className="faq-container">
+        <h1 style={{ textAlign: 'center', marginBottom: 80 }}>
+          Frequently Asked Questions
+        </h1>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          {faqData.map((faq: any) => (
+          {faqData.map((faq: any, index: number) => (
             <div
               style={{
                 marginBottom: '40px',
@@ -58,8 +61,36 @@ export const FAQ = () => {
                 paddingTop: '0px',
                 borderRadius: '12px',
                 fontSize: '20px',
+                position: 'relative',
               }}
             >
+              {index === 0 && (
+                <>
+                  <img
+                    src={hands}
+                    alt="hands in the air"
+                    style={{
+                      width: '140px',
+                      position: 'absolute',
+                      transform: 'translate(0px, -126px)',
+                      left: '18px',
+                      top: '0',
+                    }}
+                  />
+                  <img
+                    src={hands}
+                    alt="hands in the air"
+                    style={{
+                      width: '140px',
+                      position: 'absolute',
+                      transform: 'translate(0px, -126px)',
+                      right: '18px',
+                      top: '0',
+                    }}
+                  />
+                </>
+              )}
+
               <h3 style={{ marginBottom: 8 }}>
                 <Markdown>{faq.title}</Markdown>
               </h3>

@@ -154,4 +154,8 @@ code {
   .blue-box {
     width: 100% !important;
   }
+
+  .faq-container h1 {
+    margin-bottom: 130px !important;
+  }
 }
