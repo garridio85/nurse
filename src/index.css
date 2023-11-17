@@ -71,6 +71,11 @@ code {
   padding-top: 80px;
 }
 
+.reference-link {
+  font-size: 10px;
+  vertical-align: super;
+}
+
 @media screen and (max-width: 600px) {
   .lg-box {
     width: 100vw;
