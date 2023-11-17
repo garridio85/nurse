@@ -29,9 +29,10 @@ code {
 
 .blue-box {
   background: rgb(101, 167, 227);
-  height: 300px;
+  color: white;
+  height: 200px;
   border-radius: 12px;
-  width: calc(50% - 8px);
+  width: calc(33.333% - 8px);
   justify-content: center;
   display: flex;
   align-items: center;
@@ -76,6 +77,32 @@ code {
   vertical-align: super;
 }
 
+.blue-bg-container {
+  background: rgb(101, 167, 227);
+  min-height: 510px;
+  display: flex;
+  align-items: center;
+}
+
+.blue-bg-container::before {
+  content: '';
+  position: absolute;
+  background: rgb(101, 167, 227);
+  left: 0;
+  right: 0;
+  width: 200%;
+  height: 510px;
+  z-index: -1;
+}
+
+.home-welcome-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
 @media screen and (max-width: 600px) {
   .lg-box {
     width: 100vw;
@@ -83,5 +110,48 @@ code {
 
   .how-to-video {
     width: 100%;
+  }
+
+  .home-welcome-container {
+    flex-direction: column;
+  }
+
+  .home-welcome-container h1 {
+    font-size: 35px !important;
+    width: 100% !important;
+  }
+
+  .home-welcome-container img {
+    width: 100%;
+    height: unset !important;
+  }
+
+  .blue-bg-container {
+    flex-direction: column;
+    padding: 8px;
+  }
+
+  .blue-bg-container img {
+    margin-top: 20px;
+  }
+
+  .blue-bg-container p {
+    font-size: 16px !important;
+  }
+
+  .blue-bg-container::before {
+    display: none;
+  }
+
+  .spirometry-container {
+    margin: 0px !important;
+  }
+
+  .spirometry-container div {
+    width: unset !important;
+  }
+
+  .blue-box {
+    width: 100% !important;
   }
 }
