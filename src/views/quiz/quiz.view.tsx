@@ -146,9 +146,20 @@ export const Quiz = () => {
           <div style={{ textAlign: 'left', marginTop: 76, minWidth: 350 }}>
             <div
               style={{
+                fontSize: 36,
+                fontWeight: 600,
+                color: 'white',
+                textAlign: 'center',
+                marginBottom: 30,
+              }}
+            >
+              Question {activeQuestion + 1}
+            </div>
+            <div
+              style={{
                 fontSize: 30,
                 color: 'white',
-                marginBottom: 70,
+                marginBottom: 20,
                 textAlign: 'center',
               }}
             >
