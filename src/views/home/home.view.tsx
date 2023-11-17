@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import Markdown from 'markdown-to-jsx';
 import nurseMain from '../../assets/nurse-main.png';
 import spirometer from '../../assets/spirometer.png';
 
 export const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [homeData, setHomeData] = useState<any>([]);
 
   const getHomeData = () => {
     setIsLoading(true);
@@ -30,8 +28,6 @@ export const Home = () => {
 
     getDataFromGoogleSheet()
       .then((data) => {
-        console.log(data);
-        setHomeData(data);
         setIsLoading(false);
       })
       .catch((error) => console.log(error));
