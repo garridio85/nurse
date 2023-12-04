@@ -97,11 +97,6 @@ export const Home = () => {
                 Learn More About Incentive Spirometry
               </button>
             </a>
-            <a href="/how-to">
-              <button className="blue-box-button">
-                Learn How to Use an Incentive Spirometer
-              </button>
-            </a>
           </div>
         </div>
       </div>
